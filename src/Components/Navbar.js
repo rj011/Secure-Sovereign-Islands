@@ -1,11 +1,8 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import Menu from '../Components/assets/menu.png'
 import { Typography } from "@mui/material";
-import Woodie from '../Components/assets/woodie.png'
 import './Nav.css'
-import { Link } from "react-scroll";
-import Countsection from './Countsection';
+import { ConnectKitButton } from "connectkit"
 
 
 const Navbar = () => {
@@ -34,19 +31,13 @@ const Navbar = () => {
     WebkitTextFillColor: "transparent"
   }}
 >
-  Woodie
+  ZKP
 </Typography>   
           
-        <img src={Woodie} style={{ width: 55, height: 55 }} />
         </div>
-        <div className="menu-icon" onClick={handleShowNavbar}>
-        <img src={Menu} style={{ width: 55, height: 55 }} />
-        </div>
+       
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>
-            <li>
-            <Link activeClass="active" smooth spy to={Countsection}>Count </Link>
-            </li>
             <li>
               <NavLink to="/blog">Blog</NavLink>
             </li>
@@ -61,6 +52,8 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+        <ConnectKitButton/>
+
       </div>
     </nav>
   )
